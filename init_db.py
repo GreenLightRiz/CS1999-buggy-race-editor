@@ -28,7 +28,12 @@ connection.execute("""
     qty_wheels            INTEGER DEFAULT 4,
     flag_color            VARCHAR(20),
     flag_color_secondary  VARCHAR(20),
-    flag_pattern          VARCHAR(20)
+    flag_pattern          VARCHAR(20),
+    tyres                 VARCHAR(20),
+    tyreNo                INTEGER DEFAULT 4,
+    armour                VARCHAR(20),
+    power_type            VARCHAR(20),
+    total_cost            VARCHAR(10)
   )
 
 """)
@@ -40,12 +45,12 @@ cursor = connection.cursor()
 cursor.execute("SELECT * FROM buggies LIMIT 1")
 rows = cursor.fetchall()
 if len(rows) == 0:
-  cursor.execute("INSERT INTO buggies (qty_wheels) VALUES (4)")
-  connection.commit()
-  print("- Added one 4-wheeled buggy")
+  print("- Didn't add one 4-wheeled buggy")
 else:
   print("- Found a buggy in the database, nice")
 
 print("- OK, your database is ready")
 
 connection.close()
+
+
