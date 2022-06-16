@@ -1,20 +1,197 @@
 {% extends "base.html" %}
 
 {% block content %}
+<style>
+  html{
+  margin: 0;
+  padding: 0; 
+}
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 1.2em;
+  color: #000000;
+  background: #e4b062;
+  
+};
 
-  <h1>Buggy</h1>
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
 
-  <table>
-    <tr>
-      <td>ID:</td> <td> {{ buggy['id'] }} </td>
-    </tr>
-    <tr>
-      <td>Wheels:</td> <td> {{ buggy['qty_wheels'] }} </td>
-    </tr>
-  </table>
+header{
+  background: #55d6aa;
+  padding-bottom: 25px;
+  border-bottom: 3px solid #000000;
+  border-right: 3px solid #000000;
+  border-top: 3px solid #000000;
+  border-left: 3px solid #000000;
+  box-shadow: 7px 7px 7px #4c4949;  
+}
 
-  <p>
-    <a href="/" class="button">home</a>
+header ::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+nav {
+  float: inline;
+}
+
+nav ul {
+  margin: 0; 
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 70px;
+  padding-top: 25px;
+  position: relative;
+}
+
+nav a {
+  color: #444;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+nav a:hover{
+  color: #000;
+}
+
+nav a::before{
+  content: '';
+  display: block;
+  height: 7px;
+  background-color: #444;
+
+  position: absolute;
+  top: 0;
+  width: 0%;
+  transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before{
+  width: 100%
+}
+
+.main-content {
+  padding: 0em;
+  margin: 0 0 0;
+}
+h1 {
+  margin: 0 0 1em 0;
+}
+p {
+  margin: 1em 0;
+}
+a.button, input.button {
+  border: 1px solid rgb(0, 0, 0);
+  padding: 0.5em;
+  margin: 0.5em;
+  border-radius: 0.25em;
+  text-decoration: none;
+  color: #000000;
+  box-shadow: 5px 5px 5px #7f7f7f;
+  transition: background-color 0.5s;
+  cursor: pointer;
+}
+input {
+  padding: 0.5em;
+  font-size: 100%;
+}
+
+a.button:hover, input.button:hover {
+  background-color: green;
+  color: #3300ff;
+}
+table {
+  border: 1px solid #000000;
+  border-collapse: collapse;
+  margin: 1em 0 2em 0;
+}
+table td, table th {
+  padding: 0.25em;
+  margin: 0.5em;
+  border: 1px solid #000000;
+  background-color: #999999;
+  box-shadow: 5px 5px 5px #4c4949;  
+  padding: 0.5rem;
+}
+.spacer {
+  margin: 3em 0;
+}
+
+</style>
+
+<header>
+  <div class="container">
+    <nav>
+      <ul>
+        <li><a href="/"> Home </a></li>
+        <li><a href="/new"> Create Buggy </a></li>
+        <li><a href="/buggy"> Your Buggy Specifications </a></li>
+        <li><a href="/json"> Get Buggy JSON </a></li>
+        <li><a href="/info"> Information </a></li>
+        <li><a href="/poster"> My Poster </a></li>
+        <br>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+  <h2> <strong> <u> YOUR BUGGY/BUGGIES: </u></strong> </h2>
+
+  {% for buggy in buggies %}
+    <table>
+      <tr>
+        <td>ID</td> <td> {{ buggy['id'] }} </td>
+      </tr>
+      <tr>
+        <td>Number of wheels</td> <td> {{ buggy['qty_wheels'] }} </td>
+      </tr>
+      <tr>
+        <td>Your flag's main colour</td> <td> {{ buggy['flag_color'] }} </td>
+      </tr>
+      <tr>
+        <td>Your secondary flag colour:</td> <td> {{ buggy['flag_color_secondary'] }} </td>
+      </tr>
+      <tr>
+        <td>Your flag's pattern:</td> <td> {{ buggy['flag_pattern'] }} </td>
+      </tr>
+      <tr>
+        <td>Type of tyres:</td> <td> {{ buggy['tyres'] }} </td>
+      </tr>
+      <tr>
+        <td>Number of tyres:</td> <td> {{ buggy['tyreNo'] }} </td>
+      </tr>    
+      <tr>
+        <td>Type of armour:</td> <td> {{ buggy['armour'] }} </td>
+      </tr>    
+      <tr>
+        <td>Primary Motive Power:</td> <td> {{ buggy['power_type'] }} </td>
+      </tr>    
+      <tr>
+        <td>Total Cost:</td> <td> {{ buggy['total_cost'] }} </td>
+      </tr>    
+
+      
+    </table>
+
+    <a href = "/edit/{{ buggy['id'] }}" class = "button"; style="background-color: rgb(14, 215, 135);" > Edit buggy {{ buggy['id'] }}! </a>
+    <br>
+    <br>
+
+  {% endfor %}
+
+  <p style = "text-align: center;">
+    <a href="/" class="button">Main Menu</a>
   </p>
 
 {% endblock %}
