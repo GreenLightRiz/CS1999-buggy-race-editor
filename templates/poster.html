@@ -1,0 +1,410 @@
+
+{% block content %}
+
+<style>
+html{
+  margin: 0;
+  padding: 0; 
+}
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 1.2em;
+  color: #000000;
+  background: #434343;
+  
+};
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+header{
+  background: #55d6aa;
+  padding-bottom: 25px;
+  border-bottom: 3px solid #000000;
+  border-right: 3px solid #000000;
+  border-top: 3px solid #000000;
+  border-left: 3px solid #000000;
+  box-shadow: 7px 7px 7px #4c4949;  
+}
+
+header ::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+nav {
+  float: inline;
+}
+
+nav ul {
+  margin: 0; 
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 70px;
+  padding-top: 25px;
+  position: relative;
+}
+
+nav a {
+  color: #444;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+nav a:hover{
+  color: #000;
+}
+
+nav a::before{
+  content: '';
+  display: block;
+  height: 7px;
+  background-color: #444;
+
+  position: absolute;
+  top: 0;
+  width: 0%;
+  transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before{
+  width: 100%
+}
+
+.main-content {
+  padding: 0em;
+  margin: 0 0 0;
+}
+h1 {
+  margin: 0 0 1em 0;
+}
+p {
+  margin: 1em 0;
+}
+a.button, input.button {
+  border: 1px solid rgb(0, 0, 0);
+  padding: 0.5em;
+  margin: 0.5em;
+  border-radius: 0.25em;
+  text-decoration: none;
+  background-color: #D22B2B;
+  color: #000000;
+  box-shadow: 5px 5px 5px #7f7f7f;
+  transition: background-color 0.5s;
+  cursor: pointer;
+}
+input.button{
+  background-color: #00ff59;
+}
+input {
+  padding: 0.5em;
+  font-size: 100%;
+}
+
+a.button:hover, input.button:hover {
+  background-color: green;
+  color: #3300ff;
+}
+table {
+  border: 1px solid #000000;
+  border-collapse: collapse;
+  margin: 1em 0 2em 0;
+}
+table td, table th {
+  padding: 0.25em;
+  margin: 0.5em;
+  border: 1px solid #000000;
+  background-color: #999999;
+  box-shadow: 5px 5px 5px #4c4949;  
+  padding: 0.5rem;
+}
+.spacer {
+  margin: 3em 0;
+}
+
+
+
+</style>
+
+<header>
+  <div class="container">
+    <nav>
+      <ul>
+        <li><a href="/"> Home </a></li>
+        <li><a href="/new"> Create Buggy </a></li>
+        <li><a href="/buggy"> Your Buggy Specifications </a></li>
+        <li><a href="/json"> Get Buggy JSON </a></li>
+        <li><a href="/info"> Information </a></li>
+        <li><a href="/poster"> My Poster </a></li>
+        <br>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<h1 style = "background-color: #000000; color: #ffffff; font-family: monospace; text-align: center;"> 
+  <strong> 
+    <u> 
+      <br>
+      RIZWAAN AHMAD: BUGGY CREATOR
+      <br>
+    </u> 
+    <br>
+  </strong> 
+</h1>
+
+<h2 style = "background-color: #000000; color: #ffffff; font-family: monospace; text-align: center;"> 
+  <strong> 
+    <u> 
+      <br>
+      Why Us? 
+      <br>
+    </u> 
+    <br>
+  </strong> 
+</h2>
+
+<p style = "background-color: #000000; color: #ffffff; font-family: monospace; box-shadow: 5px 5px 5px #444;">
+  This is the newest and most up-and-coming buggy editor on the market right now! There are multiple options with which this stunning website can provide for you:
+</p>
+
+<li style = "background-color: #000000; color: #ffffff; font-family: monospace; box-shadow: 5px 5px 5px #444;">
+  Home - The main menu for this website! Welcome! 
+</li>
+
+<li style = "background-color: #000000; color: #ffffff; font-family: monospace; box-shadow: 5px 5px 5px #444;">
+  Create Buggy - Here, you can customise your very own buggy, and it saves itself as a JSON file.
+</li>
+
+<li style = "background-color: #000000; color: #ffffff; font-family: monospace; box-shadow: 5px 5px 5px #444;">
+  Your Buggy Specifications - The choices you made for your buggy are displayed in a table. Feel free to make as many buggies as you wish, and in this page you can edit them as you please! Unfortunately, because the buggies have gained somewhat of a sentience and they refuse to be deleted, they're there forever. Enjoy!
+</li>
+
+<li style = "background-color: #000000; color: #ffffff; font-family: monospace; box-shadow: 5px 5px 5px #444;">
+  Get Buggy JSON - The buggy's information is put into a JSON file, which you are free to download.
+</li>
+
+<li style = "background-color: #000000; color: #ffffff; font-family: monospace; box-shadow: 5px 5px 5px #444;">
+  Information - The information relating to each part of what a buggy does is conveniently located here!
+</li>
+
+<li style = "background-color: #000000; color: #ffffff; font-family: monospace; box-shadow: 5px 5px 5px #444;">
+  Poster - takes you to this page! 
+</li>
+
+<h2 style = "background-color: #000000; color: #ffffff; font-family: monospace; text-align: center; box-shadow: 5px 5px 5px #444;"> 
+  <strong> 
+    <u> 
+      <br>
+      A task-by-task explanation of my process in making this website 
+      <br>
+    </u> 
+    <br>
+  </strong> 
+</h2>
+
+<h3 style = "background-color: #000000; color: #ffffff; font-family: monospace; text-align: center; box-shadow: 5px 5px 5px #444;"> 
+  <strong>
+    <u>
+      PHASE 0
+    </u>
+</strong>
+</h3>
+
+
+
+
+<div class="task" style = "background-color:#000000; color: white; box-shadow: 5px 5px 5px #444; ">
+  <h3 style = "background-color: #000000; color: #ffffff; font-family: monospace; text-align: center;">0-GET Get the source code</h3 style = "background-color: #000000; color: #ffffff; font-family: monospace; text-align: center;">
+  <p style = "background-color: #000000; color: #c9c2c2; font-family: monospace;">
+    I installed VSCode - the IDE used for this module. To get the source code, I logged into the buggy race server, linked my account to my Github account, and forked the template to my repository.
+  </p>
+  <p style = "background-color: #000000; color: #c9c2c2; font-family: monospace;">
+    Then, after this, I downloaded the VSCode workspace configuration file, opened it with VSCode (and installing any missing plugins/packages in the process).
+  </p>
+</div>
+
+<div class="task" style = "background-color:#000000; color: white; box-shadow: 5px 5px 5px #444; ">
+  <h3 style = "background-color: #000000; color: #ffffff; font-family: monospace; text-align: center;">0-RUN Get app running and view it in a browser</h3 style = "background-color: #000000; color: #ffffff; font-family: monospace; text-align: center;">
+  <p style = "background-color: #000000; color: #c9c2c2; font-family: monospace;">
+    Flask is the python library used for handling computation in the webserver. It was already installed in the teaching server, and I ran "python3 app.py" in the terminal to deploy the webserver
+  </p>
+</div>
+
+<div class="task" style = "background-color:#000000; color: white; box-shadow: 5px 5px 5px #444; ">
+  <h3 style = "background-color: #000000; color: #ffffff; font-family: monospace; text-align: center;">0-CHANGE Make a change to a template and see it appear</h3 style = "background-color: #000000; color: #ffffff; font-family: monospace; text-align: center;">
+  <p style = "background-color: #000000; color: #c9c2c2; font-family: monospace;">
+    I experimented with making changes to template by changing around the order of written text and adding buttons.
+  </p>
+</div>
+
+
+
+<br>
+<h3 style = "background-color: #000000; color: #ffffff; font-family: monospace; text-align: center; box-shadow: 5px 5px 5px #444;"> 
+  <strong>
+    <u>
+      PHASE 1
+    </u>
+</strong>
+</h3>
+
+
+
+<div class="task" style = "background-color:#000000; color: white; box-shadow: 5px 5px 5px #444; ">
+  
+  <h3 style = "background-color: #000000; color: #ffffff; font-family: monospace; text-align: center;">1-TEMPLATE Add a new template to the app</h3 style = "background-color: #000000; color: #ffffff; font-family: monospace; text-align: center;">
+  <p style = "background-color: #000000; color: #c9c2c2; font-family: monospace;">
+    I added the new templates "info" and "poster", which gave information about things to add to each buggy and a page to display my poster respectively
+  </p>
+</div>
+
+<div class="task" style = "background-color:#000000; color: white; box-shadow: 5px 5px 5px #444; ">
+  <h3 style = "background-color: #000000; color: #ffffff; font-family: monospace; text-align: center;">1-ADD Add more data to the form</h3 style = "background-color: #000000; color: #ffffff; font-family: monospace; text-align: center;">
+  <p style = "background-color: #000000; color: #c9c2c2; font-family: monospace;">
+    I needed to add more data to the form, so I added in options for the flag's primary colour, the flag's secondary colour, the flag pattern, the type of tyres, the number of tyres, the type of armour, and primary motive power.
+  </p>
+  <p style = "background-color: #000000; color: #c9c2c2; font-family: monospace;">
+    I used a range of ways to give the user an understanding of the options - such as a colour picker and a list of options in some cases.
+  </p>
+</div>
+
+<div class="task" style = "background-color:#000000; color: white; box-shadow: 5px 5px 5px #444; ">
+  <h3 style = "background-color: #000000; color: #ffffff; font-family: monospace; text-align: center;">1-VALID Add basic data validation</h3 style = "background-color: #000000; color: #ffffff; font-family: monospace; text-align: center;">
+  <p style = "background-color: #000000; color: #c9c2c2; font-family: monospace;">
+    For the number of wheels and tyres, they could not be odd and they had to be numbers. As such, I utilised "isdigit()" and modulus to ensure that any cases where anything that was not an even number 4 or above would be invalid.
+  </p>
+  <p style = "background-color: #000000; color: #c9c2c2; font-family: monospace;">
+    For the colours of the flags, I used a colour picker so the user could easily pick out the colour of their choice, as validating each typed in input would have been too difficult to validate. The flag colours are stored as hexadecimal codes.
+  </p>
+  <p style = "background-color: #000000; color: #c9c2c2; font-family: monospace;">
+    The flag pattern, types of tyres, types of armour, and primary motive powers use the "select option" function, which has the user choose an option from a list. 
+  </p>  
+  <p style = "background-color: #000000; color: #c9c2c2; font-family: monospace;">
+    I wanted to include a price limit, but I could not find anywhere on the buggy server websites what the maximum cost could be, so I did not implement this feature.
+  </p>    
+</div>
+
+<div class="task" style = "background-color:#000000; color: white; box-shadow: 5px 5px 5px #444; ">
+  <h3 style = "background-color: #000000; color: #ffffff; font-family: monospace; text-align: center;">1-STYLE Style your editor just how you like it</h3 style = "background-color: #000000; color: #ffffff; font-family: monospace; text-align: center;">
+  <p style = "background-color: #000000; color: #c9c2c2; font-family: monospace;">
+    I used CSS to change the design of the website to my liking. The buttons have a small animation where they change colour to white when they are hovered on, and the navigation bar options have a line that is created upon hovering on it.
+  </p>
+  <p style = "background-color: #000000; color: #c9c2c2; font-family: monospace;">
+    Some buttons - namely, the "edit a buggy" buttons would not display the hover animation.
+  </p>
+</div>
+
+
+
+<br>
+<h3 style = "background-color: #000000; color: #ffffff; font-family: monospace; text-align: center; box-shadow: 5px 5px 5px #444;"> 
+  <strong>
+    <u>
+      PHASE 2
+    </u>
+</strong>
+</h3>
+
+
+
+<div class="task" style = "background-color:#000000; color: white; box-shadow: 5px 5px 5px #444; ">
+  <h3 style = "background-color: #000000; color: #ffffff; font-family: monospace; text-align: center;">2-EDIT Edit the record by loading its current values into the form</h3 style = "background-color: #000000; color: #ffffff; font-family: monospace; text-align: center;">
+  <p style = "background-color: #000000; color: #c9c2c2; font-family: monospace;">
+    I used an "IF" statement so that if the user chose an option, next time they chose to create a buggy it would default to whatever they last chose.
+  </p>
+  <p style = "background-color: #000000; color: #c9c2c2; font-family: monospace;">
+    However, I find that it has stopped working somewhere along my project. It now constantly defaults to "Please Select", though I feel as though this is better, because it stays consistent in being as user-friendly as possible.
+</p>
+</div>
+
+<div class="task" style = "background-color:#000000; color: white; box-shadow: 5px 5px 5px #444; ">
+  <h3 style = "background-color: #000000; color: #ffffff; font-family: monospace; text-align: center;">2-FORM Make the form better</h3 style = "background-color: #000000; color: #ffffff; font-family: monospace; text-align: center;">
+  <p style = "background-color: #000000; color: #c9c2c2; font-family: monospace;">
+    I gave brief explanations to how creation of buggies worked, and colour-coded if something went wrong or right (if a buggy was created wrong or a piece of data was missing, it would show an error message with a red background colour around the text, and green for if everything was successfully created)
+  </p>
+  <p style = "background-color: #000000; color: #c9c2c2; font-family: monospace;">
+    I attempted to include pictures and videos, though my website did not recognise them.
+  </p>
+</div>
+
+<div class="task" style = "background-color:#000000; color: white; box-shadow: 5px 5px 5px #444; ">
+  <h3 style = "background-color: #000000; color: #ffffff; font-family: monospace; text-align: center;">2-COST Calculate and save the game cost of the buggy</h3 style = "background-color: #000000; color: #ffffff; font-family: monospace; text-align: center;">
+  <p style = "background-color: #000000; color: #c9c2c2; font-family: monospace;">
+    I created a variable called "total_cost" and set it to 0 at first, but every time a certain item was selected - for instance, if knobbly tyres were selected) it would add the cost on to it for each choice made and outputted the total in the msg variable.
+  </p>
+</div>
+
+<div class="task" style = "background-color:#000000; color: white; box-shadow: 5px 5px 5px #444; ">
+  <h3 style = "background-color: #000000; color: #ffffff; font-family: monospace; text-align: center;">2-RULES Add validation according to the game rules</h3 style = "background-color: #000000; color: #ffffff; font-family: monospace; text-align: center;">
+  <p style = "background-color: #000000; color: #c9c2c2; font-family: monospace;">
+    I made sure that there was a minimum of 4 tyres and wheels, and if a number less than 4 was inputted it would output an error. As well as this, anything that wasn't an even number would also output an error. 
+  </p>
+  <p style = "background-color: #000000; color: #c9c2c2; font-family: monospace;">
+    I also got rid of any need for validation with the flag colours, as the input text boxes were replaced with colour pickers. As well as this, the "select" options would output an error if any of them were left on the "please select" option.
+  </p>
+</div>
+
+
+
+<br>
+<h3 style = "background-color: #000000; color: #ffffff; font-family: monospace; text-align: center; box-shadow: 5px 5px 5px #444;"> 
+  <strong>
+    <u>
+      PHASE 3
+    </u>
+</strong>
+</h3>
+
+
+
+<div class="task" style = "background-color:#000000; color: white; box-shadow: 5px 5px 5px #444; ">
+  <h3 style = "background-color: #000000; color: #ffffff; font-family: monospace; text-align: center;">3-ENV Switch between dev and production environments</h3 style = "background-color: #000000; color: #ffffff; font-family: monospace; text-align: center;">
+  <p style = "background-color: #000000; color: #c9c2c2; font-family: monospace;">
+    I switched between dev and production mode by doing FLASK_ENV=development and FLASK_ENV=production respectively.
+  </p>
+</div>
+
+<div class="task" style = "background-color:#000000; color: white; box-shadow: 5px 5px 5px #444; ">
+  <h3 style = "background-color: #000000; color: #ffffff; font-family: monospace; text-align: center;">3-AUTOFILL Add auto-fill to the edit forms</h3 style = "background-color: #000000; color: #ffffff; font-family: monospace; text-align: center;">
+  <p style = "background-color: #000000; color: #c9c2c2; font-family: monospace;">
+    I attempted to make a button that would automatically fill in the entries with default values, though it kept making an error where it generated empty tables no matter what I tried. Because of time constraints, I had to scrap the "default options" button.
+  </p>
+</div>
+
+<div class="task" style = "background-color:#000000; color: white; box-shadow: 5px 5px 5px #444; ">
+  <h3 style = "background-color: #000000; color: #ffffff; font-family: monospace; text-align: center;">3-MULTI Allow different buggies to be created</h3 style = "background-color: #000000; color: #ffffff; font-family: monospace; text-align: center;">
+  <p style = "background-color: #000000; color: #c9c2c2; font-family: monospace;">
+    I slightly changed the SQL so that it would create a new table for new buggies, rather than updating the same table. Every time a buggy is created, it adds another table of buggies, each with their own ID. 
+  </p>
+  <p style = "background-color: #000000; color: #c9c2c2; font-family: monospace;">
+    I also implemented an edit button, so that an end user could change around their buggies as they please.
+  </p>
+</div>
+
+<div class="task" style = "background-color:#000000; color: white; box-shadow: 5px 5px 5px #444; ">
+  <h3 style = "background-color: #000000; color: #ffffff; font-family: monospace; text-align: center;">3-DEL Allow buggies to be deleted</h3 style = "background-color: #000000; color: #ffffff; font-family: monospace; text-align: center;">
+  <p style = "background-color: #000000; color: #c9c2c2; font-family: monospace;">
+    I attempted to create a button that would allow buggies to be deleted, though due to time constraints I could not complete this feature and thus it was removed.
+  </p>
+</div>
+
+<br>
+
+<p class = "button-form" style = "text-align: center;">
+  <a href="/" class="button" >Main Menu</a>
+</p>
+
+
+
+{% endblock %}
