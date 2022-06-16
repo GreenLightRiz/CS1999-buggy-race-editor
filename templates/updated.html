@@ -1,14 +1,50 @@
 {% extends "base.html" %}
 
 {% block content %}
+<header>
+  <div class="container">
+    <nav>
+      <ul>
+        <li><a href="/"> Home </a></li>
+        <li><a href="/new"> Create Buggy </a></li>
+        <li><a href="/buggy"> Your Buggy Specifications </a></li>
+        <li><a href="/json"> Get Buggy JSON </a></li>
+        <li><a href="/info"> Info </a></li>
+        <li><a href="/poster"> My Poster </a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-  <h1>Updated Buggy</h1>
+  <h2 style = "font-family:Verdana, Geneva, Tahoma, sans-serif">
+    <strong>
+      <u>
+        BUGGY UPDATE STATUS:
+      </u>
+    </strong>
+  </h2>
+  <br>
+
+
+  <p style = "background-color: rgb(255, 47, 47); font-family: 'Courier New', Courier, monospace; text-align: center; font-size: x-large;">
+    <strong>
+      {{ violations }}
+    </strong>
+
+  </p>
+
+  <p style = "background-color: rgb(47, 255, 47); font-family: 'Courier New', Courier, monospace; text-align: center; font-size: x-large;">
+    <strong>
+      {{ msg }}
+    </strong>
+  </p>
+
+  <br>  
 
   <p>
-    {{ msg }}
+    <a href="/" class="button">Main Menu</a>
   </p>
-  <p>
-    <a href="/" class="button">home</a>
-  </p>
+
+
 
 {% endblock %}
