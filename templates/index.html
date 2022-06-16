@@ -2,26 +2,58 @@
 
 {% block content %}
 
-  <h1>
-    My buggy editor
-  </h1>
-
-  <div class="spacer">
-    <a href="/new" class="button">Make buggy</a>
-    <a href="/buggy" class="button">Show buggy</a>
-    <a href="/json" class="button">Get buggy JSON</a>
+<header>
+  <div class="container">
+    <nav>
+      <ul>
+        <li><a href="/"> Home </a></li>
+        <li><a href="/new"> Create Buggy </a></li>
+        <li><a href="/buggy"> Your Buggy Specifications </a></li>
+        <li><a href="/json"> Get Buggy JSON </a></li>
+        <li><a href="/info"> Information </a></li>
+        <li><a href="/poster"> My Poster </a></li>
+        <br>
+      </ul>
+    </nav>
   </div>
+</header>
 
-  <p>
+  <h2> <strong> <u> WELCOME TO THE BUGGY EDITOR </u> </strong> </h2>
+
+  <p style = "font-family:Verdana, Geneva, Tahoma, sans-serif;">
     Use this editor to specify a racing buggy. The editor saves it in its
     little database and generates JSON data for the buggy. This is the data you
     need to supply when you log into the
     <strong><a href="{{ server_url }}">race server</a></strong> and enter your
     buggy into the next race.
   </p>
-  <p>
+  
+  <p style = "font-family:Verdana, Geneva, Tahoma, sans-serif;">
+  <strong><a href="/"> HOME</a></strong> takes you to this page, which is the main menu!
+  </p>  
+
+  <p style = "font-family:Verdana, Geneva, Tahoma, sans-serif;">
+    <strong><a href="/new">CREATE BUGGY</a></strong> takes you to an interface where you can customise your own buggy!
+  </p>  
+
+  <p style = "font-family:Verdana, Geneva, Tahoma, sans-serif;">
+    <strong><a href="/buggy"> YOUR BUGGY SPECIFICATIONS</a></strong> takes you to a page where the data you made for your buggy is displayed in a tabulated format!
+  </p>  
+
+  <p style = "font-family:Verdana, Geneva, Tahoma, sans-serif;">
+    <strong><a href="/json">GET BUGGY JSON</a></strong> takes you to a page where the data you made for your buggy is shown as a JSON file!
+  </p>  
+
+  <p style = "font-family:Verdana, Geneva, Tahoma, sans-serif;">
+    <strong><a href="/info"> INFO</a></strong> gives you all the information you need to know about the buggy you're making
+  </p>  
+
+  <p style = "font-family:Verdana, Geneva, Tahoma, sans-serif;">
+    <strong><a href="/poster"> POSTER</a> </strong> takes you to a page of a poster I made which describes my process in coding for this project </p>   
+  
+  <p style = "font-family:Verdana, Geneva, Tahoma, sans-serif;">
     Remember that if your data is not accepted by the race server, your buggy
-    will be disqualified from that race... so make sure you program your editor
+    will be disqualified from that race - so make sure you program your editor
     correctly.
   </p>
 
