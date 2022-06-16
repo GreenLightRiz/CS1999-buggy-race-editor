@@ -1,0 +1,541 @@
+
+{% block content %}
+
+<style>
+html{
+  margin: 0;
+  padding: 0; 
+}
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 1.2em;
+  color: #000000;
+  background: #e4b062;
+  
+};
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+header{
+  background: #55d6aa;
+  padding-bottom: 25px;
+  border-bottom: 3px solid #000000;
+  border-right: 3px solid #000000;
+  border-top: 3px solid #000000;
+  border-left: 3px solid #000000;
+  box-shadow: 7px 7px 7px #4c4949;  
+}
+
+header ::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+nav {
+  float: inline;
+}
+
+nav ul {
+  margin: 0; 
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 70px;
+  padding-top: 25px;
+  position: relative;
+}
+
+nav a {
+  color: #444;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+nav a:hover{
+  color: #000;
+}
+
+nav a::before{
+  content: '';
+  display: block;
+  height: 7px;
+  background-color: #444;
+
+  position: absolute;
+  top: 0;
+  width: 0%;
+  transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before{
+  width: 100%
+}
+
+.main-content {
+  padding: 0em;
+  margin: 0 0 0;
+}
+h1 {
+  margin: 0 0 1em 0;
+}
+p {
+  margin: 1em 0;
+}
+a.button, input.button {
+  border: 1px solid rgb(0, 0, 0);
+  padding: 0.5em;
+  margin: 0.5em;
+  border-radius: 0.25em;
+  text-decoration: none;
+  background-color: #D22B2B;
+  color: #000000;
+  box-shadow: 5px 5px 5px #7f7f7f;
+  transition: background-color 0.5s;
+  cursor: pointer;
+}
+input.button{
+  background-color: #00ff59;
+}
+input {
+  padding: 0.5em;
+  font-size: 100%;
+}
+
+a.button:hover, input.button:hover {
+  background-color: green;
+  color: #3300ff;
+}
+table {
+  border: 1px solid #000000;
+  border-collapse: collapse;
+  margin: 1em 0 2em 0;
+}
+table td, table th {
+  padding: 0.25em;
+  margin: 0.5em;
+  border: 1px solid #000000;
+  background-color: #999999;
+  box-shadow: 5px 5px 5px #4c4949;  
+  padding: 0.5rem;
+}
+.spacer {
+  margin: 3em 0;
+}
+
+
+  
+  </style>
+
+<header>
+  <div class="container">
+    <nav>
+      <ul>
+        <li><a href="/"> Home </a></li>
+        <li><a href="/new"> Create Buggy </a></li>
+        <li><a href="/buggy"> Your Buggy Specifications </a></li>
+        <li><a href="/json"> Get Buggy JSON </a></li>
+        <li><a href="/info"> Information </a></li>
+        <li><a href="/poster"> My Poster </a></li>
+        <br>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<h2> <strong> <u> BUGGY SPECS </u> </strong> </h2>
+<h3><strong>Power Type</strong></h3>
+<table border="1">
+<tbody>
+<tr>
+<td><strong>Power Type</strong></td>
+<td><strong>Cost (points)</strong></td>
+<td><strong>Is it consumable? </strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td>bio</td>
+<td>5</td>
+<td>True</td>
+<td>Bio-fuelled internal combustion engine</td>
+</tr>
+<tr>
+<td>electric</td>
+<td>20</td>
+<td>True</td>
+<td>Lithium-ion battery</td>
+</tr>
+<tr>
+<td>fusion</td>
+<td>400</td>
+<td>False</td>
+<td>Fusion reactor</td>
+</tr>
+<tr>
+<td>hamster</td>
+<td>3</td>
+<td>True</td>
+<td>Hamster</td>
+</tr>
+<tr>
+<td>petrol</td>
+<td>4</td>
+<td>True</td>
+<td>Petroleum-fuelled internal combustion engine</td>
+</tr>
+<tr>
+<td>rocket</td>
+<td>16</td>
+<td>True</td>
+<td>Rocket fuel</td>
+</tr>
+<tr>
+<td>solar</td>
+<td>40</td>
+<td>False</td>
+<td>Bank of solar panels</td>
+</tr>
+<tr>
+<td>steam</td>
+<td>3</td>
+<td>True</td>
+<td>Steam engine</td>
+</tr>
+<tr>
+<td>thermo</td>
+<td>300</td>
+<td>False</td>
+<td>Thermonuclear reactor</td>
+</tr>
+<tr>
+<td>wind</td>
+<td>20</td>
+<td>False</td>
+<td>Sailing rig</td>
+</tr>
+</tbody>
+</table>
+<h3><strong>Tyres</strong></h3>
+<table border="1">
+<tbody>
+<tr>
+<td><strong>Tyres</strong></td>
+<td><strong>Cost (points)</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td>knobbly</td>
+<td>15</td>
+<td>Great for off-roading</td>
+</tr>
+<tr>
+<td>maglev</td>
+<td>50</td>
+<td>You can't get punctures if you don't touch the ground. Frictionless.</td>
+</tr>
+<tr>
+<td>reactive</td>
+<td>40</td>
+<td>Intelligent nanotech swarm rubber restructures itself depending on the conditions</td>
+</tr>
+<tr>
+<td>slick</td>
+<td>10</td>
+<td>Fast choice for roads/rain</td>
+</tr>
+<tr>
+<td>steelband</td>
+<td>20</td>
+<td>
+<p>Slower but almost impossible to puncture</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<h3><strong>Armour</strong></h3>
+<table border="1">
+    <tbody>
+    <tr>
+    <td style><strong>Armour</strong></td>
+    <td style><strong>Cost (points)</strong></td>
+    <td style><strong>Description</strong></td>
+    </tr>
+    <tr>
+    <td style>aluminium</td>
+    <td class="number" style >200</td>
+    <td style>Fairly strong but light</td>
+    </tr>
+    <tr>
+    <td style>none</td>
+    <td class="number" style >0</td>
+    <td style>Unburdened and unprotected. Ideal for trips to the shops</td>
+    </tr>
+    <tr>
+    <td style>thicksteel</td>
+    <td class="number" style >200</td>
+    <td style>Very strong but very heavy</td>
+    </tr>
+    <tr>
+    <td style>thinsteel<code></code></td>
+    <td class="number" style >100</td>
+    <td style>Strong but heavy</td>
+    </tr>
+    <tr>
+    <td style>titanium</td>
+    <td class="number" style >290</td>
+    <td style>The ultimate in plate protection, but pricey</td>
+    </tr>
+    <tr>
+    <td style>wood</td>
+    <td class="number" style >40</td>
+    <td style>Cheap but pragmatic (sustainable forests are used where possible)</td>
+    </tr>
+    </tbody>
+    </table>
+
+<h3><strong>Attack</strong></h3>
+<table border="1">
+<tbody>
+<tr>
+<td><strong>Attack</strong></td>
+<td><strong>Cost (points)</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td>biohazard</td>
+<td>30</td>
+<td>A cloud of infectious spores that target homonids and rodents</td>
+</tr>
+<tr>
+<td>charge</td>
+<td>28</td>
+<td>An electric lance like a cattleprod made of lightning</td>
+</tr>
+<tr>
+<td>flame</td>
+<td>20</td>
+<td>A flamethrower that puffs out a ball of fire</td>
+</tr>
+<tr>
+<td>none</td>
+<td>0</td>
+<td>Mostly harmless</td>
+</tr>
+<tr>
+<td>spike</td>
+<td>5</td>
+<td>A metal prong welded onto the superstructure</td>
+</tr>
+</tbody>
+</table>
+<h3><strong>Algo</strong></h3>
+<table border="1">
+<tbody>
+<tr>
+<td><strong>Algo</strong></td>
+<td><strong>Cost (points)</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td>buggy</td>
+<td>0</td>
+<td>A bad state that occurs when damaged</td>
+</tr>
+<tr>
+<td>defensive</td>
+<td>0</td>
+<td>Always avoids conflict: will attack but only reluctantly</td>
+</tr>
+<tr>
+<td>offensive</td>
+<td>0</td>
+<td>Always seeks to attack (while attacks are available)</td>
+</tr>
+<tr>
+<td>random</td>
+<td>0</td>
+<td>Capriciously defensive, steady, or offensive at different times during the race, based on mood</td>
+</tr>
+<tr>
+<td>steady</td>
+<td>0</td>
+<td>The middle way: doesn't seek out attacks but makes them if opportunities present themselves</td>
+</tr>
+<tr>
+<td>titfortat</td>
+<td>0</td>
+<td>Starts steady, but petulantly switches to offence if attacked</td>
+</tr>
+</tbody>
+</table>
+<h3><strong>Flag Pattern</strong></h3>
+<table border="1">
+<tbody>
+<tr>
+<td><strong>Flag Pattern</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td>checker</td>
+<td>A chequered grid</td>
+</tr>
+<tr>
+<td>dstripe</td>
+<td>Diagonal stripes</td>
+</tr>
+<tr>
+<td>hstripe</td>
+<td>Horizontal stripes</td>
+</tr>
+<tr>
+<td>plain</td>
+<td>A plain field with no secondary colour</td>
+</tr>
+<tr>
+<td>spot</td>
+<td>Spotted</td>
+</tr>
+<tr>
+<td>vStripe</td>
+<td>Vertical stripes</td>
+</tr>
+</tbody>
+</table>
+<h3><strong>Special</strong></h3>
+<table border="1">
+<tbody>
+<tr>
+<td><strong>Special</strong></td>
+<td><strong>Cost (points)</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td>antibiotic</td>
+<td>90</td>
+<td>antibiotic?</td>
+</tr>
+<tr>
+<td>banging</td>
+<td>42</td>
+<td>banging?</td>
+</tr>
+<tr>
+<td>fireproof</td>
+<td>70</td>
+<td>fireproof?</td>
+</tr>
+<tr>
+<td>hamster_booster</td>
+<td>5</td>
+<td>steriods for hamsters</td>
+</tr>
+<tr>
+<td>insulated</td>
+<td>100</td>
+<td>insulated?</td>
+</tr>
+</tbody>
+</table>
+<h3><strong>Buggy Specifications: Defaults<br /></strong></h3>
+<table border="1">
+<tbody>
+<tr>
+<td><strong>Item</strong></td>
+<td><strong>Default Value</strong></td>
+</tr>
+<tr>
+<td>algo</td>
+<td>steady</td>
+</tr>
+<tr>
+<td>antibiotic</td>
+<td>False</td>
+</tr>
+<tr>
+<td>armour</td>
+<td>none</td>
+</tr>
+<tr>
+<td>attack</td>
+<td>none</td>
+</tr>
+<tr>
+<td>aux_power_type</td>
+<td>None</td>
+</tr>
+<tr>
+<td>aux_power_units</td>
+<td>0</td>
+</tr>
+<tr>
+<td>banging</td>
+<td>False</td>
+</tr>
+<tr>
+<td>fireproof</td>
+<td>False</td>
+</tr>
+<tr>
+<td>flag_colour</td>
+<td>white</td>
+</tr>
+<tr>
+<td>flag_colour_secondary</td>
+<td>black</td>
+</tr>
+<tr>
+<td>flag_pattern</td>
+<td>plain</td>
+</tr>
+<tr>
+<td>hamster_booster</td>
+<td>0</td>
+</tr>
+<tr>
+<td>insulated</td>
+<td>False</td>
+</tr>
+<tr>
+<td>power_type</td>
+<td>petrol</td>
+</tr>
+<tr>
+<td>power_units</td>
+<td>1</td>
+</tr>
+<tr>
+<td>qty_attacks</td>
+<td>0</td>
+</tr>
+<tr>
+<td>qty_tyres</td>
+<td>4</td>
+</tr>
+<tr>
+<td>qty_wheels</td>
+<td>4</td>
+</tr>
+<tr>
+<td>tyres</td>
+<td>knobbly</td>
+</tr>
+</tbody>
+</table>
+
+<p class = "button-form" style = "text-align: center;">
+  <a href="/" class="button">Main Menu</a>
+</p>
+
+
+
+{% endblock %}
